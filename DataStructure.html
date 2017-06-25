@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        var user = {};
+//        var user1 = new Object();
+//        user.name = 'Vasia';
+//        user.surname = 'Petrov';
+//        user1 ['name1'] = 'Petr';
+//        user1 ['surname1'] = 'Vasiliev';
+//        var n = 'name1';
+//        var s = 'surname1';
+//        user.name = 'Sergey';
+//        delete user.name;
+//        alert (user.name + ' ' + user.surname);
+//        alert (user1[n] + ' ' + user1[s]);
+/////////////////////////////////////////////////////////////////////////
+//        function isEmpty (obj){
+////            var count = 0;
+////            for (var prop in obj){
+////                count++;
+////            }
+////            if (count === 0){
+////                return true;
+////            }
+////            else return false;
+//            for (var prop in obj){
+//                return false;
+//            }
+//            return true;
+//        }
+//        var shedule = {};
+//        alert(isEmpty(shedule));
+//        shedule ["8:30"] = "get up";
+//        alert(isEmpty(shedule));
+/////////////////////////////////////////////////////////////////////////
+////        "use strict";
+////        var salaries = {
+////            "Vasia": 100,
+////            "Petya": 300,
+////            "Sasha": 250
+////        };
+////        function summOfSalaries(salaries) {
+////            var res = 0;
+////            for (var salary in salaries){
+////                var sal = salaries [salary];
+////                res +=sal;
+////            }
+////            return res;
+////        }
+////        alert(summOfSalaries(salaries));
+//        "use strict";
+//
+//        var salaries = {
+//            "Вася": 100,
+//            "Петя": 300,
+//            "Даша": 250
+//        };
+//
+//        var sum = 0;
+//        for (var name in salaries) {
+//            sum += salaries[name];
+//        }
+//
+//        alert( sum );
+/////////////////////////////////////////////////////////////////////////
+//        "use strict";
+//
+//        var salaries = {
+//            "Вася": 100,
+//            "Петя": 300,
+//            "Даша": 250
+//        };
+//        var maxSalary = 0;
+//        var name = "";
+//        for (var salary in salaries){
+//            var sal = salaries[salary];
+//            if (maxSalary < sal){
+//                maxSalary = sal;
+//                name = salary;
+//            }
+//        }
+//        alert(name || "No employee");
+/////////////////////////////////////////////////////////////////////////
+//        var menu = {
+//            width: 200,
+//            height: 300,
+//            title: "My menu"
+//        };
+//
+//        function isNumeric(n) {
+//            return !isNaN(parseFloat(n)) && isFinite(n);
+//        }
+//
+//        function multiplyNumeric(obj) {
+//            for (var prop in obj){
+//                if (isNumeric(obj[prop])){
+//                    obj[prop] *= 2;
+//                }
+//            }
+//        }
+//        multiplyNumeric(menu);
+//        alert("menu width = " + menu.width + " " + "height = " + menu.height + " " + "title " +
+//            "= " + menu.title);
+////////////////////////////////////////////////////////////////////////////
+//        var time = {
+//            year: 2345,
+//            month: 11,
+//            day: 10,
+//            hour: 11,
+//            minute: 12,
+//            second: 13,
+//            microsecond: 123456
+//        }
+//
+//        console.log(time); // (*)
+//        time.microsecond++; // (**)
+//
+//        console.log(time);
+//        time.microsecond++;
+//
+//        console.log(time);
+//        time.microsecond++;
+////////////////////////////////////////////////////////////////////////////
+//        var goods = [1,2,3,4,5,6,7,8,9,90,12,76];
+//        goods.push("PC");
+//        alert(goods);
+////////////////////////////////////////////////////////////////////////////
+//        var style = [" Джаз", " Блюз"];
+//        alert(style);
+//        style.push(" Рок-н-Ролл");
+//        alert(style);
+//        style[style.length-2] = undefined;
+//        style[style.length-2] = " Классика";
+//        alert(style);
+//        alert(style.shift());
+//        alert(style);
+//        style.unshift(" Рэп"," Регги");
+//        alert(style);
+////////////////////////////////////////////////////////////////////////////
+//        var arr = [" Яблоко", " Апельсин", " Груша", " Лимон"];
+////        function randomeNumber(min, max) {
+////            var rand = min + Math.floor(Math.random() * (max + 1 - min));
+////            return rand
+////        }
+////        alert(arr[randomeNumber(0, arr.length-1)]);
+//        var rand = Math.floor(Math.random() * arr.length);
+//        alert (arr[rand]);
+////////////////////////////////////////////////////////////////////////////
+        var numbers = [];
+
+        while (true) {
+
+            var value = prompt("Введите число", 0);
+
+            if (value === "" || value === null || isNaN(value)) break;
+
+            numbers.push(+value);
+        }
+
+        var sum = 0;
+        for (var i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        alert( sum );
+    </script>
+</body>
+</html>
