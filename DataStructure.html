@@ -151,23 +151,156 @@
 //        var rand = Math.floor(Math.random() * arr.length);
 //        alert (arr[rand]);
 ////////////////////////////////////////////////////////////////////////////
-        var numbers = [];
+//        var numbers = [];
+//
+//        while (true) {
+//
+//            var value = prompt("Введите число", 0);
+//
+//            if (value === "" || value === null || isNaN(value)) break;
+//
+//            numbers.push(+value);
+//        }
+//
+//        var sum = 0;
+//        for (var i = 0; i < numbers.length; i++) {
+//            sum += numbers[i];
+//        }
+//
+//        alert( sum );
+////////////////////////////////////////////////////////////////////////////
+//        var arr = ["test", 2, 1.5, false];
+//
+//        function find(array, value) {
+//            var answer;
+//            array = arr;
+//            for (var i = 0; i < array.length; i++){
+//                if (array[i] === value){
+//                    return i;
+//                }
+//            }
+//            return -1;
+//        }
+//        alert (find(arr,"test"));
+//        // создаем пустой массив и проверяем поддерживается ли indexOf
+//        if ([].indexOf) {
+//
+//            var find = function(array, value) {
+//                return array.indexOf(value);
+//            }
+//        } else {
+//            var find = function(array, value) {
+//                for (var i = 0; i < array.length; i++) {
+//                    if (array[i] === value) return i;
+//                }
+//                return -1;
+//            }
+//        }
+////////////////////////////////////////////////////////////////////////////
+////        var arr = [5, 4, 3, 8, 0];
+////        var result = [];
+////
+////        function filterRange(arr, a, b) {
+////            var indexMin;
+////            var indexMax;
+////            indexMin = arr.indexOf(a);
+////            indexMax = arr.indexOf(b);
+////
+////            if (arr.indexOf(a) < arr.indexOf(b)){
+////                indexMin = arr.indexOf(a);
+////                indexMax = arr.indexOf(b);
+////            }
+////            else {
+////                indexMin = arr.indexOf(b);
+////                indexMax = arr.indexOf(a);
+////            }
+////            for (var i = 0; i < arr.length; i++){
+////                if (i === indexMin) {
+////                    for (var j = indexMin; j <= indexMax; j++) {
+////                        result.push(arr[j]);
+////                    }
+////                }
+////            }
+////            alert (result);
+////        }
+////        filterRange(arr, 0, 3);
+//        function filterRange(arr, a, b) {
+//            var result = [];
+//
+//            for (var i = 0; i < arr.length; i++) {
+//                if (arr[i] >= a && arr[i] <= b) {
+//                    result.push(arr[i]);
+//                }
+//            }
+//
+//            return result;
+//        }
+//
+//        var arr = [5, 4, 3, 8, 0];
+//
+//        var filtered = filterRange(arr, 3, 5);
+//        alert( filtered );
+////////////////////////////////////////////////////////////////////////////
+//        // шаг 1
+//        var arr = [];
+//
+//        for (var i = 2; i < 100; i++) {
+//            arr[i] = true
+//        }
+//
+//        // шаг 2
+//        var p = 2;
+//
+//        do {
+//            // шаг 3
+//            for (i = 2 * p; i < 100; i += p) {
+//                arr[i] = false;
+//            }
+//            alert (arr);
+//            // шаг 4
+//            for (i = p + 1; i < 100; i++) {
+//                if (arr[i]) break;
+//            }
+//
+//            p = i;
+//        } while (p * p < 100); // шаг 5
+//
+//        // шаг 6 (готово)
+//        // посчитать сумму
+//        var sum = 0;
+//        for (i = 0; i < arr.length; i++) {
+//            if (arr[i]) {
+//                sum += i;
+//            }
+//        }
+//
+//        alert( sum );
+////////////////////////////////////////////////////////////////////////////////////
+        var arr = [-1, 2, -3, 9, -11];
 
-        while (true) {
-
-            var value = prompt("Введите число", 0);
-
-            if (value === "" || value === null || isNaN(value)) break;
-
-            numbers.push(+value);
+//        var sumMax = 0;
+//
+//        function getMaxSubSum(arr) {
+//            for (i = 0; i < arr.length; i++){
+//                var sum = 0;
+//                for ( var j = i; j < arr.length; j++){
+//                    sum = sum + arr[j];
+//                    sumMax = Math.max(sum, sumMax);
+//                }
+//            }
+//            return sumMax;
+//        }
+        function getMaxSubSum(arr) {
+            var maxSum = 0,
+                partialSum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                partialSum += arr[i];
+                maxSum = Math.max(maxSum, partialSum);
+                if (partialSum < 0) partialSum = 0;
+            }
+            return maxSum;
         }
-
-        var sum = 0;
-        for (var i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
-        }
-
-        alert( sum );
+        alert (getMaxSubSum(arr));
     </script>
 </body>
 </html>
