@@ -276,31 +276,213 @@
 //
 //        alert( sum );
 ////////////////////////////////////////////////////////////////////////////////////
-        var arr = [-1, 2, -3, 9, -11];
-
-//        var sumMax = 0;
+//        var arr = [-1, 2, -3, 9, -11];
 //
+////        var sumMax = 0;
+////
+////        function getMaxSubSum(arr) {
+////            for (i = 0; i < arr.length; i++){
+////                var sum = 0;
+////                for ( var j = i; j < arr.length; j++){
+////                    sum = sum + arr[j];
+////                    sumMax = Math.max(sum, sumMax);
+////                }
+////            }
+////            return sumMax;
+////        }
 //        function getMaxSubSum(arr) {
-//            for (i = 0; i < arr.length; i++){
-//                var sum = 0;
-//                for ( var j = i; j < arr.length; j++){
-//                    sum = sum + arr[j];
-//                    sumMax = Math.max(sum, sumMax);
+//            var maxSum = 0,
+//                partialSum = 0;
+//            for (var i = 0; i < arr.length; i++) {
+//                partialSum += arr[i];
+//                maxSum = Math.max(maxSum, partialSum);
+//                if (partialSum < 0) partialSum = 0;
+//            }
+//            return maxSum;
+//        }
+//        alert (getMaxSubSum(arr));
+////////////////////////////////////////////////////////////////////////////////////////////
+//        var obj = {
+//            className: 'open menu'
+//        };
+//        function addClass(obj, cls) {
+//            var classes = obj.className ? obj.className.split(' ') : [];
+//            for (var i = 0; i < classes.length; i++) {
+//                if (classes[i] == cls) return; // класс уже есть
+//            }
+//            classes.push(cls); // добавить
+//            obj.className = classes.join(' '); // и обновить свойство
+//        }
+//        addClass(obj, 'new');
+//        addClass(obj, 'open');
+//        addClass(obj, 'me');
+//        alert(obj.className)
+////////////////////////////////////////////////////////////////////////////////////////////////
+//        function camelize(str) {
+//            var arr = [];
+//            var symbol = '';
+//            var newString = '';
+//            arr = str.split('-');
+//            for (var i = 0; i < arr.length; i++) {
+//                if (i == 0){
+//                    newString = arr[i];
+//                }
+//                else if ( i !== 0) {
+//                    symbol = ((arr[i].charAt(0)).toUpperCase());
+//                    newString += symbol + arr[i].substring(1);
 //                }
 //            }
-//            return sumMax;
+//            return newString;
 //        }
-        function getMaxSubSum(arr) {
-            var maxSum = 0,
-                partialSum = 0;
-            for (var i = 0; i < arr.length; i++) {
-                partialSum += arr[i];
-                maxSum = Math.max(maxSum, partialSum);
-                if (partialSum < 0) partialSum = 0;
-            }
-            return maxSum;
-        }
-        alert (getMaxSubSum(arr));
+//        alert (camelize("-webkit-transition"));
+//////////////////////////////////////////////////////////////////////////////////////////////
+//        var obj = {
+//            className: 'menu open menu my menu exit menu'
+//        };
+//        function removeClass(obj, cls) {
+//            var classes = obj.className ? obj.className.split(' ') : [];
+//            for (var i = 0; i < classes.length; i++) {
+//                if (classes[i] == cls){
+//                    classes.splice(i, 1); // удалить
+//                    i--;
+//                }
+//            }
+//            obj.className = classes.join(' '); // и обновить свойство
+//        }
+//        removeClass(obj, 'menu');
+////        removeClass(obj, 'blabla');
+//        alert(obj.className)
+/////////////////////////////////////////////////////////////////////////////////////////////
+//        arr = [5, 3, 8, 1, 7, 4, 9, 2];
+//        function filterRangeInPlace(arr, a, b) {
+//            for (var i = 0; i < arr.length; i++){
+//                if ((arr[i] < a) || (arr[i] > b)){
+//                    arr.splice(i, 1);
+//                    i--;
+//                }
+//            }
+//        }
+//        filterRangeInPlace(arr, 2, 5); // удалены числа вне диапазона 1..4
+//        alert( arr );
+////////////////////////////////////////////////////////////////////////////////////////////////
+//        var arr = [5, 2, 1, -10, 8];
+//        function compareNumeric(a, b) {
+//            return b - a;
+//        }
+//        arr.sort(compareNumeric);
+//        alert( arr ); // 8, 5, 2, 1, -10
+///////////////////////////////////////////////////////////////////////////////////////////////
+//        var arr = ["HTML", "JavaScript", "CSS"];
+//        var arrSorted = arr.slice().sort();
+//        alert( arrSorted ); // CSS, HTML, JavaScript
+//        alert( arr ); // HTML, JavaScript, CSS (без изменений)
+///////////////////////////////////////////////////////////////////////////////////////////////
+//        var arr = [10, 20, 30, 40, 50];
+//        function random(a, b) {
+//            return Math.random() - 0.5;
+//        }
+//        arr.sort(random);
+//        alert (arr);
+//////////////////////////////////////////////////////////////////////////////////////////////
+//        var vasya = { name: "Вася", age: 23 };
+//        var masha = { name: "Маша", age: 56 };
+//        var vovochka = { name: "Вовочка", age: 36 };
+//
+//        var people = [ vasya , masha , vovochka ];
+//
+//        function sortByAge(a, b) {
+//            return a.age - b.age;
+//        }
+//        people.sort(sortByAge);
+//        alert(people[0].age);
+//////////////////////////////////////////////////////////////////////////////////////////////
+//        var list = {
+//            value: 1,
+//            next: {
+//                value: 2,
+//                next: {
+//                    value: 3,
+//                    next: {
+//                        value: 4,
+//                        next: null
+//                    }
+//                }
+//            }
+//        };
+///////////////// in cycle
+////        function printList(list) {
+////            var tmp = list;
+////
+////            while (tmp){
+////                alert (tmp.value);
+////                tmp = tmp.next;
+////            }
+////        }
+////        printList(list);
+//        printReverseList(list);
+/////////////// in recursion
+////        function printList(list) {
+////            alert(list.value);
+////            if (list.next){
+////                printList(list.next);
+////            }
+////        }
+/////////////// reverse in recursion
+////        function printReverseList(list){
+////            if (list.next){
+////                printReverseList(list.next)
+////            }
+////            alert(list.value);
+////        }
+////////////// revers in cycle
+//        function printReverseList(list) {
+//            var arr = [];
+//            var tmp = list;
+//            while (tmp){
+//                arr.push(tmp.value);
+//                tmp = tmp.next;
+//            }
+//            for (var i = arr.length - 1; i >=0; i--){
+//                alert (arr[i]);
+//            }
+//        }
+//////////////////////////////////////////////////////////////////////////////////////////////
+//        var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+//
+//        function aclean(arr) {
+//            var obj = {};
+//
+//            for (var i = 0; i < arr.length; i++) {
+//                // разбить строку на буквы, отсортировать и слить обратно
+//                var sorted = arr[i].toLowerCase().split('').sort().join(''); // (*)
+//
+//                obj[sorted] = arr[i]; // сохраняет только одно значение с таким ключом
+//            }
+//
+//            var result = [];
+//
+//            // теперь в obj находится для каждого ключа ровно одно значение
+//            for (var key in obj) result.push(obj[key]);
+//
+//            return result;
+//        }
+//        alert( aclean(arr) );
+//////////////////////////////////////////////////////////////////////////////////////////////
+//        function unique(arr) {
+//            var obj = {};
+//            for (var i = 0; i < arr.length; i++) {
+//                var string = arr[i];
+//                obj[string] = arr[i];
+//            }
+//            var result = [];
+//            for (var key in obj) result.push(obj[key]);
+//            return result;
+//        }
+//
+//        var strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", "8-()"];
+//        alert( unique(strings) );
+//////////////////////////////////////////////////////////////////////////////////////////////
+
     </script>
 </body>
 </html>
